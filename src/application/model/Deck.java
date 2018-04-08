@@ -97,7 +97,7 @@ public class Deck {
 		char adjective = 'a';
 		char assignTag = ' ';
 		
-		
+		System.out.print("hello kai");
 		
 		return assignTag;
 		
