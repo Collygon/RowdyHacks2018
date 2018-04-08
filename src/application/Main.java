@@ -28,7 +28,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
-			System.out.println(dictionary.getNouns());
+			System.out.println(dictionary.getNouns().size());
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
