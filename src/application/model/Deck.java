@@ -73,15 +73,36 @@ public class Deck {
 	public Card analyzeSentence(String sentence) {
 		String answer = "";
 		String question = "";
-		
 		String[] words = sentence.split(" ");
+		char[] tags = new char[words.length];
+		
+		for(int x = 0; x < words.length; x++) {
+			if (words.length == 3) {
+				answer += words[0]+words[1]+"________.";
+				question += words[2];
+				break;
+			}
+			else // gives letter tag to corresponding word in sentence
+				tags[x] = getTag(words[x]);
+		}
 		
 		//TODO: Make a blank space in sentence and assign it to question
 		//TODO: assign answer to answer
 		return new Card(question,answer);
 	}
 
-	
+	public char getTag(String word) {
+		char verb = 'v';
+		char noun = 'n';
+		char adverb = 'v';
+		char adjective = 'a';
+		char assignTag = ' ';
+		
+		
+		
+		return assignTag;
+		
+	}
 	//////getters and setters//////
 	public ArrayList<Card> getCards() {
 		return cards;
