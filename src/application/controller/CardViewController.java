@@ -119,7 +119,7 @@ public class CardViewController implements EventHandler<ActionEvent>, Initializa
 	
 	public void handleFlip(MouseEvent event) {
 		secondaryLabel.setText(Main.deck.cards.get(Main.deck.getCurrentCard()).getQuestion());
-		primaryLabel.setText(Main.deck.cards.get(Main.deck.getCurrentCard()).getAnswer());
+		//primaryLabel.setText(Main.deck.cards.get(Main.deck.getCurrentCard()).getAnswer());
 		revealNode(yesButton);
 		revealNode(noButton);
 		revealNode(correctText);		

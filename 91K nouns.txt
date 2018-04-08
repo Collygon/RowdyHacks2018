@@ -7674,6 +7674,7 @@ Stanislavski
 Stanley
 Staten
 Stavanger
+Stegosauria
 Steinbeck
 Steiner
 Steinway
@@ -8985,7 +8986,6 @@ abortiveness
 aboulia
 about-face
 about-faces
-above
 abracadabra
 abracadabras
 abradant
@@ -11303,7 +11303,6 @@ ancillaries
 ancillary
 ancon
 ancones
-and
 andalusite
 andante
 andantes
@@ -18383,7 +18382,6 @@ busts
 busybodies
 busybody
 busyness
-but
 butadiene
 butane
 butanol
@@ -49482,8 +49480,6 @@ knowes
 knowing
 knowingness
 knowledge
-known
-knows
 knuckle
 knuckles
 knur
@@ -51118,7 +51114,6 @@ ligules
 ligure
 ligures
 likableness
-like
 like-mindedness
 likelihood
 likelihoods
@@ -56219,7 +56214,6 @@ mosses
 mossie
 mossies
 mossiness
-most
 mot
 mote
 motel
@@ -60017,7 +60011,6 @@ oven
 ovens
 ovenware
 ovenwood
-over
 overabundance
 overabundances
 overacting
@@ -78759,7 +78752,7 @@ stegodon
 stegodons
 stegomyia
 stegosaur
-stegosaurs
+stegosaurus
 stein
 steins
 stela
@@ -82965,7 +82958,6 @@ thema
 thematic
 theme
 themes
-then
 thenar
 thenars
 thens

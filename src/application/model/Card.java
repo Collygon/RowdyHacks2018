@@ -21,6 +21,10 @@ public class Card {
 		return (timesCorrect/timesAsked)*100;
 	}
 	
+//	public String toString() {
+//		return String.format("QUESTION: %s\nANSWER: %s", question,answer.get(0));
+//	}
+	
 
 	//////getters and setters///////
 	public String getQuestion() {

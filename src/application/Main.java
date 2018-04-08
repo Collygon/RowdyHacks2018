@@ -12,8 +12,9 @@ import javafx.scene.layout.AnchorPane;
 public class Main extends Application {
 	
 	public static Stage stage;
-	public static Deck deck;
 	public static Dictionary dictionary = new Dictionary();
+	public static Deck deck = new Deck("sample.txt");
+	
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -28,7 +29,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			
-			System.out.println(dictionary.getNouns().size());
+			System.out.println(deck.getCards());
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
