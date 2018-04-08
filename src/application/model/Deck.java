@@ -67,7 +67,6 @@ public class Deck {
 			cards.add(analyzeSentence(sentences.get(a)));
 		}
 		
-		
 		return cards;
 	}
 	
@@ -81,7 +80,7 @@ public class Deck {
 		int lastVerb = findLastVerb(tags);
 		
 		int count = 0;
-		for(int x = words.length-1; x >= (count < 2 ? 0 : lastVerb); x--) {
+		for(int x = words.length-1; x >= (count < 1 ? 0 : lastVerb); x--) {
 			if(tags[x] == 'n' && count < 2)
 			{	
 				answer.add(0,words[x]);
@@ -105,8 +104,6 @@ public class Deck {
 		}
 //		System.out.println(tags);
 		System.out.println("Question: "+question+"\nAnswer:"+answer);
-		//TODO: Make a blank space in sentence and assign it to question
-		//TODO: assign answer to answer
 		return new Card(question,answer);
 	}
 	

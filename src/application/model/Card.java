@@ -25,6 +25,14 @@ public class Card {
 //		return String.format("QUESTION: %s\nANSWER: %s", question,answer.get(0));
 //	}
 	
+	public String printAnswer() {
+		if(answer.size() < 1)
+			return "No answer.";
+		return answer.size() == 2 
+				? String.format("Answer(s): %s %s", answer.get(0), answer.get(1)) 
+						: String.format("Answer(s): %s", answer.get(0));
+	}
+	
 
 	//////getters and setters///////
 	public String getQuestion() {

@@ -13,7 +13,7 @@ public class Main extends Application {
 	
 	public static Stage stage;
 	public static Dictionary dictionary = new Dictionary();
-	public static Deck deck = new Deck("sample.txt");
+	public static Deck deck;
 	
 	
 	@Override
