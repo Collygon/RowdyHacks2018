@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import application.Main;
+
 public class Deck {
 	////////class variables//////
 	public ArrayList<Card> cards = new ArrayList<Card>();
@@ -70,19 +72,39 @@ public class Deck {
 	
 	
 	public Card analyzeSentence(String sentence) {
-		String answer = "";
+		ArrayList<String> answer = new ArrayList<String>();
 		String question = "";
 		String[] words = sentence.split(" ");
 		char[] tags = new char[words.length];
 		
 		for(int x = 0; x < words.length; x++) {
 			if (words.length == 3) {
-				answer += words[0]+words[1]+"________.";
-				question += words[2];
+				answer.add(words[2]);
+				question += words[0]+words[1]+"________.";
 				break;
 			}
 			else // gives letter tag to corresponding word in sentence
 				tags[x] = getTag(words[x]);
+		}
+		
+		int lastVerb = 0;
+		for(int x = words.length-1; x >= 0; x--) {
+			if(tags[x] == 'v'){
+				lastVerb = x;
+				break;
+			}
+				
+		}
+		
+		for(int x = lastVerb; x < words.length; x++) {
+			if(tags[x] == 'n')
+				answer.add(words[x]);
+				words[x] = "_______";
+			
+		}
+		
+		for(int x = 0; x < words.length; x++) {
+			question += words[x] + " ";
 		}
 		
 		//TODO: Make a blank space in sentence and assign it to question
@@ -91,14 +113,16 @@ public class Deck {
 	}
 
 	public char getTag(String word) {
-		char verb = 'v';
-		char noun = 'n';
-		char adverb = 'v';
-		char adjective = 'a';
 		char assignTag = ' ';
 		
-		System.out.print("hello kai");
-		
+		if(Main.dictionary.isNoun(word))
+			assignTag = 'n';
+		if(Main.dictionary.isAdjective(word))
+			assignTag = 'a';
+		if(Main.dictionary.isAdverb(word))
+			assignTag = 'v';
+		if(Main.dictionary.isVerb(word))
+			assignTag = 'v';
 		return assignTag;
 		
 	}

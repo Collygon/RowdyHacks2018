@@ -1,15 +1,17 @@
 package application.model;
 
+import java.util.ArrayList;
+
 public class Card {
 	///////class variables////////
 	String question;
-	String answer;
+	ArrayList<String> answer;
 	double priority = 1;
 	public int timesAsked = 0;
 	public int timesCorrect = 0;
 	
 	/////constructors
-	public Card(String question, String answer) {
+	public Card(String question, ArrayList<String> answer) {
 		this.question = question;
 		this.answer = answer;
 	}
@@ -28,10 +30,10 @@ public class Card {
 		this.question = question;
 	}
 
-	public String getAnswer() {
+	public ArrayList<String> getAnswer() {
 		return answer;
 	}
-	public void setAnswer(String answer) {
+	public void setAnswer(ArrayList<String> answer) {
 		this.answer = answer;
 	}
 
