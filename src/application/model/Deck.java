@@ -80,10 +80,10 @@ public class Deck {
 		
 		int lastVerb = findLastVerb(tags);
 		
+		int count = 0;
 		for(int x = words.length-1; x >= lastVerb; x--) {
-			int count = 0;
 			if(tags[x] == 'n' && count < 2)
-			{	answer.add(words[x]);
+			{	answer.add(0,words[x]);
 				words[x] = "_______";
 				count++;
 			}
