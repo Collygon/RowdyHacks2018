@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.TreeSet;
 
 public class Deck {
 	////////class variables//////
@@ -56,7 +55,7 @@ public class Deck {
 			e.printStackTrace();
 		}
 		
-		return new ArrayList<Card>();
+		return cards;
 	}
 	
 	public ArrayList<Card> makeCards(ArrayList<String> sentences) {

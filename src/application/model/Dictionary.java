@@ -19,6 +19,26 @@ public class Dictionary {
 		initializeAdjectives();
 	}
 	
+	public boolean isNoun(String word) {
+		if( nouns.contains(word) )
+			return true;
+		return false;
+	}
+	public boolean isVerb(String word) {
+		if( verbs.contains(word) )
+			return true;
+		return false;
+	}
+	public boolean isAdverb(String word) {
+		if( adverbs.contains(word) )
+			return true;
+		return false;
+	}
+	public boolean isAdjective(String word) {
+		if( adjectives.contains(word) )
+			return true;
+		return false;
+	}
 	
 	  ////////////////////////////////////////////////////////////////////
 	 //each of the initialize methods populate trees based on txt files//
