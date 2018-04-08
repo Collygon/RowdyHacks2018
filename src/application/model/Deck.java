@@ -81,21 +81,29 @@ public class Deck {
 		int lastVerb = findLastVerb(tags);
 		
 		int count = 0;
-		for(int x = words.length-1; x >= lastVerb; x--) {
-			if((tags[x] == 'n' || tags[x] == 'a') && count < 2)
+		for(int x = words.length-1; x >= (count < 2 ? 0 : lastVerb); x--) {
+			if(tags[x] == 'n' && count < 2)
 			{	
 				answer.add(0,words[x]);
 				words[x] = "_______";
 				count++;
 			}
 		}
-		
-		System.out.println(tags);
+		if(count < 2)
+			for(int x = words.length-1; x >= lastVerb; x--) {
+				if(tags[x] == 'a' && count < 2)
+				{	
+					answer.add(0,words[x]);
+					words[x] = "_______";
+					count++;
+				}
+			}
 		
 		for(int x = 0; x < words.length; x++) {
 			question += words[x] + " ";
 			
 		}
+//		System.out.println(tags);
 		System.out.println("Question: "+question+"\nAnswer:"+answer);
 		//TODO: Make a blank space in sentence and assign it to question
 		//TODO: assign answer to answer
