@@ -82,12 +82,15 @@ public class Deck {
 		
 		int count = 0;
 		for(int x = words.length-1; x >= lastVerb; x--) {
-			if(tags[x] == 'n' && count < 2)
-			{	answer.add(0,words[x]);
+			if((tags[x] == 'n' || tags[x] == 'a') && count < 2)
+			{	
+				answer.add(0,words[x]);
 				words[x] = "_______";
 				count++;
 			}
 		}
+		
+		System.out.println(tags);
 		
 		for(int x = 0; x < words.length; x++) {
 			question += words[x] + " ";
@@ -115,11 +118,12 @@ public class Deck {
 		
 		if(Main.dictionary.isPreposition(word) || Main.dictionary.isPreposition(word.toLowerCase()))
 			return 'p';
+		
 		if(Main.dictionary.isAdjective(word) || Main.dictionary.isAdjective(word.toLowerCase()))
 			return 'a';
 		
 		if(Main.dictionary.isAdverb(word) || Main.dictionary.isAdverb(word.toLowerCase()))
-			return 'v';
+			return 'd';
 		
 		if(Main.dictionary.isVerb(word) || Main.dictionary.isVerb(word.toLowerCase()))	
 			return 'v';
