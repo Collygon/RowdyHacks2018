@@ -33,7 +33,6 @@ public class Card {
 						: String.format("Answer(s): %s", answer.get(0));
 	}
 	
-
 	//////getters and setters///////
 	public String getQuestion() {
 		return question;
