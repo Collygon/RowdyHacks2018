@@ -113,9 +113,8 @@ public class Deck {
 
 	public char getTag(String word) {
 		
-		if(Main.dictionary.isNoun(word) || Main.dictionary.isNoun(word.toLowerCase()))
-			return 'n';
-		
+		if(Main.dictionary.isPreposition(word) || Main.dictionary.isPreposition(word.toLowerCase()))
+			return 'p';
 		if(Main.dictionary.isAdjective(word) || Main.dictionary.isAdjective(word.toLowerCase()))
 			return 'a';
 		
@@ -124,6 +123,9 @@ public class Deck {
 		
 		if(Main.dictionary.isVerb(word) || Main.dictionary.isVerb(word.toLowerCase()))	
 			return 'v';
+		
+		if(Main.dictionary.isNoun(word) || Main.dictionary.isNoun(word.toLowerCase()))
+			return 'n';
 
 		return ' ';
 		

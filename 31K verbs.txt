@@ -30252,8 +30252,6 @@ weeps
 wees
 weigh
 weighs
-weight
-weights
 welch
 welches
 welcome

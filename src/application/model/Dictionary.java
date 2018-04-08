@@ -11,12 +11,20 @@ public class Dictionary {
 	TreeSet<String> verbs = new TreeSet<String>();
 	TreeSet<String> adverbs = new TreeSet<String>();
 	TreeSet<String> adjectives = new TreeSet<String>();
+	TreeSet<String> prepositions = new TreeSet<String>();
 	
 	public Dictionary() {
 		initializeNouns();
 		initializeVerbs();
 		initializeAdverbs();
 		initializeAdjectives();
+		initializePrepositions();
+	}
+	
+	public boolean isPreposition(String word) {
+		if(prepositions.contains(word))
+			return true;
+		return false;
 	}
 	
 	public boolean isNoun(String word) {
@@ -43,6 +51,22 @@ public class Dictionary {
 	  ////////////////////////////////////////////////////////////////////
 	 //each of the initialize methods populate trees based on txt files//
 	////////////////////////////////////////////////////////////////////
+	public void initializePrepositions() {
+		File file = new File("prepositions.txt");
+		Scanner scanner;
+		try {
+			scanner = new Scanner(file);
+			String currentLine;
+			while(scanner.hasNextLine()) {
+				currentLine = scanner.nextLine();
+				prepositions.add(currentLine);
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public void initializeNouns() {
 		File file = new File("91K nouns.txt");
 		Scanner scanner;
