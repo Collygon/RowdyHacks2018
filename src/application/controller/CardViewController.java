@@ -4,15 +4,11 @@ import javafx.event.ActionEvent;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import application.Main;
-import application.model.Card;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
@@ -31,21 +27,6 @@ public class CardViewController implements EventHandler<ActionEvent>, Initializa
 	@FXML
 	Button uploadButton;
 	
-	@FXML
-	Label primaryLabel;
-	
-	@FXML
-	Label secondaryLabel;
-	
-	@FXML
-	Label scoreLabel;
-	
-	@FXML
-	Label niceLabel;
-	
-	@FXML
-	Label wrongLabel;
-	
 	public static File pdfFile;
 	public static File txtFile;
 	
@@ -55,8 +36,6 @@ public class CardViewController implements EventHandler<ActionEvent>, Initializa
 		hideNode(yesButton);
 		hideNode(noButton);
 		hideNode(correctText);
-		hideNode(niceLabel);
-		hideNode(wrongLabel);
 		
 		
 
@@ -94,80 +73,51 @@ public class CardViewController implements EventHandler<ActionEvent>, Initializa
 	
 	
 	public void handleNext(ActionEvent event) {
-		nextCard();
-		secondaryLabel.setText("");
-		primaryLabel.setText(Main.deck.cards.get(Main.deck.getCurrentCard()).getQuestion());
+		//TODO: 1. Set primaryLabel to next question in list.
 		hideNode(yesButton);
 		hideNode(noButton);
 		hideNode(correctText);
-		hideNode(niceLabel);
-		hideNode(wrongLabel);
+		
+		
+		
 	}
 	
 	
 	public void handlePrevious(ActionEvent event) {
-		previousCard();
-		updateScore(Main.deck.cards.get(Main.deck.getCurrentCard()));
-		secondaryLabel.setText("");
-		primaryLabel.setText(Main.deck.cards.get(Main.deck.getCurrentCard()).getQuestion());
+		//TODO: 1. Set primaryLabel to previous question in list.
 		hideNode(yesButton);
 		hideNode(noButton);
-		hideNode(correctText);	
-		hideNode(niceLabel);
-		hideNode(wrongLabel);
+		hideNode(correctText);
+		
+		
+		
 	}
 	
 	public void handleFlip(MouseEvent event) {
-		secondaryLabel.setText(Main.deck.cards.get(Main.deck.getCurrentCard()).getQuestion());
-		//primaryLabel.setText(Main.deck.cards.get(Main.deck.getCurrentCard()).getAnswer());
+		//TODO: 1. Set primaryLabel to answered question.
+		//      2. Set secondaryLabel to question
 		revealNode(yesButton);
 		revealNode(noButton);
-		revealNode(correctText);		
+		revealNode(correctText);
+		
+		
 	}
 	
 	public void handleYes(ActionEvent event) {
-		correctAnswer(Main.deck.cards.get(Main.deck.getCurrentCard()));
+		//TODO: Register that the flashcard was answered correctly.
 		hideNode(yesButton);
 		hideNode(noButton);
 		hideNode(correctText);
-		revealNode(niceLabel);
+		
+		
+		
 	}
 	
 	public void handleNo(ActionEvent event) {
-		hideNode(yesButton);
-		hideNode(noButton);
-		hideNode(correctText);
-		hideNode(wrongLabel);
-			
-	}
-	
-	public void correctAnswer(Card c) {
-		c.setTimesCorrect(c.getTimesCorrect() + 1);
-	}
-	
-	public void viewAnswer(Card c) {
-		c.setTimesAsked(c.getTimesAsked() + 1);
-	}
-	
-	public void updateScore(Card c) {
-		scoreLabel.setText("Times Correct: "+c.getTimesCorrect()+
-						   " Times Viewed: "+c.getTimesAsked()+ 
-						   " Score: %"+c.calculatePercentage());
-	}
-	
-	public void nextCard() {
-		if(Main.deck.getCurrentCard() < Main.deck.getCards().size())
-			Main.deck.setCurrentCard(Main.deck.getCurrentCard() + 1);
-		else if(Main.deck.getCurrentCard() == Main.deck.getCards().size())
-			Main.deck.setCurrentCard(0);
-	}
-	
-	public void previousCard() {
-		if(Main.deck.getCurrentCard() > 1)
-			Main.deck.setCurrentCard(Main.deck.getCurrentCard() - 1);
-		else if(Main.deck.getCurrentCard() == 0)
-			Main.deck.setCurrentCard(Main.deck.getCards().size() - 1);
-			
+		//TODO: Register that the flashcard was answered incorrectly.
+		
+		
+		
 	}
 
 	@Override
